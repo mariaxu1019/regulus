@@ -1,29 +1,45 @@
-# Project 2 Starter Code
+# Regulus: Authenticated Encryption
 
-This repository contains the starter code for Project 2!
+## 🚀 Overview
 
-For comprehensive documentation, see the Project 2 Spec (https://cs161.org/proj2/).
+The goal of this project was to build a secure messaging system that provides **confidentiality** and **integrity** using authenticated encryption. The system is designed to prevent a powerful attacker from being able to read, modify, or replay messages, even with full control over the network.
 
-Write your implementation in `client/client.go` and your integration tests in `client_test/client_test.go`. Optionally, you can also use `client/client_unittest.go` to write unit tests (e.g: to test your helper functions).
+All cryptographic operations are implemented using a minimal and secure set of primitives provided by the project harness. The project enforces careful design decisions around nonce management, key separation, and tamper detection.
 
-To test your implementation, run `go test -v` inside of the `client_test` directory. This will run all tests in both `client/client_unittest.go` and `client_test/client_test.go`.
+## 🔒 Features
 
-## Project Members
+- **Authenticated Encryption (Encrypt-then-MAC):** Messages are encrypted and authenticated using AES-CTR and HMAC-SHA256.
+- **Unique Nonce Generation:** Ensures nonces are never reused under the same key.
+- **Replay Protection:** Rejects duplicated ciphertexts using a set of seen nonces.
+- **Tampering Detection:** Automatically detects and rejects modified or truncated messages.
 
-Fill in this section with the student IDs of all the members in your project group.
+## 🛠️ Skills & Technologies Used
 
-Partner 1 Name: Maria Xu
+- **Programming Language:** Python 3.11+
+- **Cryptography:** AES in CTR mode, HMAC-SHA256
+- **Security Concepts:** 
+  - Encrypt-then-MAC
+  - Replay attack prevention
+  - Message authentication codes (MACs)
+  - Nonce management and key derivation
+- **Testing:** Python `unittest` framework + fuzz testing
 
-Partner 1 SID: 3037762652
+## 📁 Structure
 
-Partner 1 Email: mariaxu@berkeley.edu
+- `crypto/`: Core cryptographic operations (encryption, MAC, key derivation)
+- `regulus/`: Main message sender/receiver logic and client state tracking
+- `tests/`: Unit tests and integration tests provided in the harness
+- `Makefile`: Used for building and running the harness
+- `README.md`: This file
 
-Partner 2 Name (if applicable): Michelle Chen
+## 🧪 How to Run
 
-Partner 2 SID (if applicable): 3037311910
+Make sure you are using Python 3.11+ and have all dependencies installed.
 
-Partner 2 Email (if applicable): michelle.chenn@berkeley.edu
+```bash
+# Build the harness
+make
 
-Also add a link to this repo below (should start with https://github.com/cs161-students/).
+# Run all tests
+make test
 
-Link to this Github repo: https://github.com/cs161-students/sp24-proj2-maria-michelle
