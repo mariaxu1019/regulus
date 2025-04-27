@@ -15,14 +15,13 @@ All cryptographic operations are implemented using a minimal and secure set of p
 
 ## 🛠️ Skills & Technologies Used
 
-- **Programming Language:** Python 3.11+
+- **Programming Language:** Go
 - **Cryptography:** AES in CTR mode, HMAC-SHA256
 - **Security Concepts:** 
   - Encrypt-then-MAC
   - Replay attack prevention
   - Message authentication codes (MACs)
   - Nonce management and key derivation
-- **Testing:** Python `unittest` framework + fuzz testing
 
 ## 📁 Structure
 
@@ -30,16 +29,4 @@ All cryptographic operations are implemented using a minimal and secure set of p
 - `regulus/`: Main message sender/receiver logic and client state tracking
 - `tests/`: Unit tests and integration tests provided in the harness
 - `Makefile`: Used for building and running the harness
-- `README.md`: This file
-
-## 🧪 How to Run
-
-Make sure you are using Python 3.11+ and have all dependencies installed.
-
-```bash
-# Build the harness
-make
-
-# Run all tests
-make test
 
