@@ -23,10 +23,3 @@ All cryptographic operations are implemented using a minimal and secure set of p
   - Message authentication codes (MACs)
   - Nonce management and key derivation
 
-## 📁 Structure
-
-- `crypto/`: Core cryptographic operations (encryption, MAC, key derivation)
-- `regulus/`: Main message sender/receiver logic and client state tracking
-- `tests/`: Unit tests and integration tests provided in the harness
-- `Makefile`: Used for building and running the harness
-
